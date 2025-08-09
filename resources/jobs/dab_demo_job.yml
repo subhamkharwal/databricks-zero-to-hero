@@ -1,0 +1,27 @@
+resources:
+  jobs:
+    dab_demo_job:
+      name: dab_demo_job
+      tasks:
+        - task_key: demo_notebook
+          notebook_task:
+            notebook_path: ../notebooks/demo_repo_notebook.py
+            source: WORKSPACE
+          job_cluster_key: Job_cluster
+      job_clusters:
+        - job_cluster_key: Job_cluster
+          new_cluster:
+            spark_version: 16.4.x-scala2.12
+            azure_attributes:
+              first_on_demand: 1
+              availability: SPOT_WITH_FALLBACK_AZURE
+              spot_bid_max_price: -1
+            node_type_id: Standard_D4ds_v5
+            spark_env_vars:
+              PYSPARK_PYTHON: /databricks/python3/bin/python3
+            enable_elastic_disk: true
+            data_security_mode: SINGLE_USER
+            num_workers: 1
+      queue:
+        enabled: true
+

@@ -1,0 +1,9 @@
+targets:
+  dev:
+    permissions:
+      - group_name: de_grp
+        level: CAN_MANAGE
+    
+    presets:
+      name_prefix: (dev ${workspace.current_user.short_name})
+      source_linked_deployment: false

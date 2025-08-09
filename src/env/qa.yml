@@ -1,0 +1,7 @@
+targets:
+  qa:
+    permissions:
+      - group_name: de_grp
+        level: CAN_RUN
+      - group_name: de_grp
+        level: CAN_VIEW

@@ -1,0 +1,25 @@
+bundle:
+  name: DABDemo
+
+include:
+  - src/*.yml
+  - src/env/*.yml
+  - resources/jobs/*.yml
+  - resources/pipelines/*.yml
+  - resources/schemas/*.yml
+
+permissions:
+  - group_name: de_grp
+    level: CAN_MANAGE
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-1632411508895165.5.azuredatabricks.net/
+
+  qa:
+    default: false
+    workspace:
+      host: https://adb-1632411508895165.5.azuredatabricks.net/
