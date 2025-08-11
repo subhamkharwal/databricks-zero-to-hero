@@ -17,9 +17,9 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://adb-1632411508895165.5.azuredatabricks.net/
+      host: <dev workspace url>
 
   qa:
     default: false
     workspace:
-      host: https://adb-1632411508895165.5.azuredatabricks.net/
+      host: <qa workspace url>
